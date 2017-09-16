@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>新建网页</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<link href="xx.css">
+<script src="xx.js"></script>
+
+<import type="css" file="a.b.c" />
+<import type="js" file="c.d.e" />
+
+<load href="http://www.baidu.com/xx.js" />
+<load href="http://www.baidu.com/yy.css" />
+
+<script src="__PUBLIC__"></script>
+</head>
+<body>
+<include file="Public/header"/>
+<h1>{$title}</h1>
+<p>{$content}</p>
+
+{$score}
+<if condition="$score lt 60">
+不及格
+<elseif condition="$score lt 80" />
+良
+<else/>
+优
+</if>
+
+<select>
+<option value="1" {$cat_id==1?'selected':''}>第一栏</option>
+<option value="2" {$cat_id==2?'selected':''}>第二栏</option>
+<option value="3" {$cat_id==3?'selected':''}>第三栏</option>
+</select>
+
+<table border="1">
+<tr>
+<td>索引</td>
+<td>序号</td>
+<td>标题</td>
+<td>时间</td>
+</tr>
+
+<foreach name="news" key="k" item="n">
+<tr>
+<td>{$k}</td>
+<td>{$n.id}</td>
+<td>{$n.title}</td>
+<td>{$n['pubtime']}</td>
+</tr>
+</foreach>
+</table>
+
+<include file="Public/footer"/>
+</body>
+</html>

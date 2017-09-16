@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="手机网" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<title>GSM手机_手机类型_ECSHOP演示站 - Powered by ECShop</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="__PUBLIC__/Home/css/member.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="__PUBLIC__/Home/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!-- include header-->
+<include file="Public/header" />
+<!--end  include header-->
+
+<!-- include nav-->
+<include file="Public/nav" />
+<!--end  include nav-->
+
+	<div class="mainot">
+		<div class="menu">当前位置: <span><a href=".">首页</a> <code>&gt;</code> 用户中心</span></div>
+		<div class="logm">
+			<div class="mainbt">登录后，继续操作</div>
+			<div class="logregmain">
+				<form name="formLogin" action="{:U('Home/User/login')}" method="post" onsubmit="return userLogin();">
+
+					<div class="logregline">
+						<div class="logreg_l">用户名：</div>
+						<div class="logreg_r">
+							<input id="username" name="username" type="text"  maxlength="100" class="input">
+							<p><span id="valdateEmail">注册时的用户名</span></p>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="logregline">
+						<div class="logreg_l">密 码：</div>
+						<div class="logreg_r">
+							<input id="password" name="password" type="password" class="input" maxlength="16">
+							<p><a href="javascript:void(0);" onclick="javascript:show();" name="losepsw">忘记密码？</a></p>
+							<div id="fogetpass" class="fdiv fdivpsw" style="display:none">
+								<div class='fdiv_b'>
+									<div class='fdiv_bl'>取回密码</div>
+
+									<div class='fdiv_br' onClick="javascript:display()">&times;</div>
+								</div>
+								<div class='fdiv_m'>
+									<p>请填写您在注册时填写的E-mail地址：<input type='text' name="fogetpass_txt" class='inputfd'></p>
+									<p class='no' style='display:none' id='emailerror'>请输入您在注册时填写的Email地址。</p>
+									<div class='fdiv_foot'><input class="buttonred" id="getpassbutton" name="getpassbutton" onclick="send();" value="提交" type="button"></div>
+									<p class='tips'>如果该电子邮箱地址不正确，或者您已经忘记注册时填写的邮箱地址，那我们无法帮您找回密码。 建议创建一个新帐户。</p>
+
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<input type="hidden" name="act" value="act_login" />
+					<input type="hidden" name="back_act" value="./index.php" />
+					<div class="logreg_dl"><input class="buttonred" id="loginButton" name="login" value="登 录" type="submit"></div>
+				</form>				
+			</div>
+
+		</div>
+		<div class="clear"></div>
+		
+		
+			</div>
+</div>
+
+<!-- include footer-->
+<include file="Public/footer" />
+<!--end  include footer-->
+</body>
+</html>

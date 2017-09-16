@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="Generator" content="手机网" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <title>
+        GSM手机_手机类型_ECSHOP演示站 - Powered by ECShop
+    </title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="__PUBLIC__/Home/css/index.css" rel="stylesheet" type="text/css" media="screen"
+    />
+    <link href="__PUBLIC__/Home/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__PUBLIC__/Home/js/common.js"></script>
+</head>
+
+<body>
+<!-- include header-->
+<include file="Public/header" />
+<!--end  include header-->
+
+<!-- include nav-->
+<include file="Public/nav" />
+<!--end  include nav-->
+
+    <div id="body">
+        <div class="body_l">
+            <div class="subsearch">
+                <form id="searchForm" name="searchForm" method="get" action="search.php"
+                onSubmit="return checkSearchForm()">
+                    <div>
+                        <input name="keywords" type="text" id="keyword" value="" class="searchmobile">
+                        <button class="menu_button" name="menu_button" onClick="return checkSearchForm()">
+                        </button>
+                    </div>
+                </form>
+            </div>
+<!--            <script type="text/javascript">
+                function checkSearchForm() {
+                    if (document.getElementById('keyword').value) {
+                        document.searchForm.submit();
+                        return true;
+                    } else {
+                        alert("请输入搜索关键词！");
+                        return false;
+                    }
+                }
+            </script>-->
+            <div class="subnav_header">
+            </div>
+            <script type="text/javascript">
+            function menu_c(o) {
+                alert(o.getElementsByTagName('ul').length);
+            }
+            </script>
+            <div class="subnav">
+                <foreach name="cats" item="c">
+                <if condition="$c['parent_id']==0">
+                <div>
+                    <span class="left">
+                        {$c['cat_name']}
+                    </span>
+                    <span class="right subnav_right">
+                        <img src="__PUBLIC__/Home/images/line.gif" border="0" id="categorie_ico1">
+                    </span>
+                </div>
+                <ul>
+                    <foreach name="cats" item="s">
+                    <if condition="$s['parent_id']==$c['cat_id']">
+                    <li>
+                        &nbsp;
+                        <a href="{:U('Home/Index/cat' ,array('cat_id'=>$s['cat_id']))}">
+                            {$s['cat_name']}
+                        </a>
+                    </li>
+                    </if>
+                    </foreach>
+                </ul>
+                </if>
+                </foreach>
+            </div>
+            <div class="subinfo_header">
+                <div class="left subinfo_header_left">
+                    <a href="#">
+                    </a>
+                </div>
+                <!--<div class="right subinfo_header_right"><a href="#">更多</a></div>-->
+            </div>
+            <div class="subinfo_body">
+                <ul>
+                    <li style="width:175px; overflow:hidden">
+                        <a href="#" title="很好，我很喜欢" style="color:#333333">
+                            很好，我很喜欢
+                        </a>
+                        <br />
+                        <a style="color:#333333">
+                            ecshop
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="subinfo_footer">
+            </div>
+            <div class="subinfo_header">
+                <div class="subinfo_header_left_top10">
+                    &nbsp;
+                    <a href="#">
+                    </a>
+                </div>
+            </div>
+            <div class="subinfo_body_top10">
+                <ul>
+                    <foreach name="history" item="g" key="k">
+                    <li>
+                        <div class="subinfo_body_top10_l">
+                            <a href="{:U('Home/Index/goods' , array('goods_id'=>$k))}">
+                                <img src="{$g.thumb_img}" alt=""
+                                class="samllimg" />
+                            </a>
+                        </div>
+                        <div class="subinfo_body_top10_r">
+                            <p class="subinfo_body_top10_r_1">
+                                <a href="#">{$g.goods_name}</a>
+                            </p>
+                            <p class="subinfo_body_top10_r_3">
+                                ￥{$g.shop_price}元
+                            </p>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </li>
+                    </foreach>
+                </ul>
+            </div>
+            <div class="subinfo_footer">
+            </div>
+            <div class="submessage_header">
+                &nbsp;
+            </div>
+            <div class="submessage_body">
+                <a href="#" target="_blank">
+                    <img src="__PUBLIC__/Home/images/message.gif">
+                </a>
+            </div>
+            <div class="subinfo_footer">
+            </div>
+        </div>
+        <div class="body_r" style=" display:inline">
+            <div class="mainbig">
+                <img src="__PUBLIC__/Home/images/banner.jpg" />
+            </div>
+            <div class="clear">
+            </div>
+            <div class="mainheader">
+                <div class="weekbuy">
+                    <a href="search.php?intro=new">
+                        更多&gt;&gt;
+                    </a>
+                </div>
+            </div>
+            <ul class="productlist">
+                <foreach name="best" item="g">
+                <li>
+                    <a href="{:U('Home/Index/goods' , array('goods_id'=>$g['goods_id']))}">
+                        <img src="{$g.thumb_img}" alt="{$g.goods_name}" />
+                    </a>
+                    <p class="pname">
+                        <a href="{:U('Home/Index/goods' , array('goods_id'=>$g['goods_id']))}" title="{$g.goods_name}">
+                            {$g.goods_name}{$g.goods_brief}
+                        </a>
+                    </p>
+                    <p class="price">
+                        ￥{$g.shop_price}元
+                    </p>
+                </li>
+                </foreach>
+            </ul>
+            <div class="clear"></div>
+            <div class="mainheader">
+                <div class="lowerbuy">
+                    <a href="search.php?intro=new">
+                        更多&gt;&gt;
+                    </a>
+                </div>
+            </div>
+            <ul class="productlist">
+                <foreach name="hot" item="g">
+                <li>
+                    <a href="{:U('Home/Index/goods' , array('goods_id'=>$g['goods_id']))}">
+                        <img src="{$g.thumb_img}" alt="{$g.goods_name}" />
+                    </a>
+                    <p class="pname">
+                        <a href="{:U('Home/Index/goods' , array('goods_id'=>$g['goods_id']))}" title="{$g.goods_name}">
+                            {$g.goods_name}{$g.goods_brief}
+                        </a>
+                    </p>
+                    <p class="price">
+                        ￥{$g.shop_price}元
+                    </p>
+                </li>
+                </foreach>
+            </ul>
+            <div class="clear"></div>
+            <div class="mainheader">
+                <div class="newproduct">
+                    <a href="search.php?intro=new">
+                        更多&gt;&gt;
+                    </a>
+                </div>
+            </div>
+            <ul class="productlist">
+                <foreach name="new" item="g">
+                <li>
+                    <a href="{:U('Home/Index/goods' , array('goods_id'=>$g['goods_id']))}">
+                        <img src="{$g.thumb_img}" alt="{$g.goods_name}" />
+                    </a>
+                    <p class="pname">
+                        <a href="{:U('Home/Index/goods' , array('goods_id'=>$g['goods_id']))}" title="{$g.goods_name}">
+                            {$g.goods_name}{$g.goods_brief}
+                        </a>
+                    </p>
+                    <p class="price">
+                        ￥{$g.shop_price}元
+                    </p>
+                </li>
+                </foreach>
+            </ul>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    </div>
+<!-- include footer-->
+<include file="Public/footer" />
+<!--end  include footer-->
+</body>
+
+</html>

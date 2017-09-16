@@ -1,0 +1,67 @@
+<div id="header">
+    <div class="header_top">
+        <div class="header_top_l">
+        </div>
+        <div class="header_top_m">
+            <div style='float:left' id="ECS_MEMBERZONE">
+                欢迎光临本店　　　　
+                <if condition="acc()">
+                    {$Think.cookie.username}
+                    <a href="{:U('Home/User/logout')}">退出</a>
+                    <else />
+                    <a href="{:U('Home/User/login')}">
+                        会员登录
+                    </a>
+                    |
+                    <a href="{:U('Home/User/reg')}">
+                        免费注册
+                    </a>
+                </if>
+                <label id="myaccount">
+                    <a href="#">
+                        我的帐户
+                    </a>
+                </label>
+                <label id="helpcenter">
+                    <a href="#">
+                        帮助中心
+                    </a>
+                </label>
+            </div>
+            <div style='float:right'>
+                <label id="collect">
+                    <a href="#">
+                        加入收藏
+                    </a>
+                </label>
+                <label id="sethome">
+                    <a href="#" onclick="SetHome(this,window.location)">
+                        设为首页
+                    </a>
+                </label>
+            </div>
+            <div class='clear'>
+            </div>
+        </div>
+        <div class="header_top_r">
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="logo">
+        <a href="#">
+            <img src="__PUBLIC__/Home/images/logo.gif">
+        </a>
+    </div>
+    <div class="header_intro">
+        <img src="__PUBLIC__/Home/images/by_top.gif">
+    </div>
+    <div class="headerdg">
+        <em>
+            抢购热线（全天24小时）
+        </em>
+        <p>
+            <img src="__PUBLIC__/Home/images/tel1.gif">
+        </p>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="Generator" content="手机网" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <title>GSM手机_手机类型_ECSHOP演示站 - Powered by ECShop</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="__PUBLIC__/Home/css/member.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="__PUBLIC__/Home/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!-- include header-->
+<include file="Public/header" />
+<!--end  include header-->
+
+<!-- include nav-->
+<include file="Public/nav" />
+<!--end  include nav-->
+
+<div class="mainot">
+    <div class="menu">当前位置: <span><a href=".">首页</a> <code>&gt;</code> 用户中心</span></div>
+    <div class="regm">
+        <div class="mainbt">还没帐户？注册真的很简单</div>
+        <div class="logregmain">
+            <form name="formUser" action="{:U('Home/User/reg')}" method="post">
+                <div class="logregline">
+                    <div class="logreg_l">请填写您的用户名：</div>
+                    <div class="logreg_r">
+
+                        <input name="username" id="username" maxlength="100" type="text" class="input">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="logregline">
+                    <div class="logreg_l">请输入email地址：</div>
+                    <div class="logreg_r">
+
+                        <input type="text" name="email" id="email" class="input" maxlength="16">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="logregline">
+                    <div class="logreg_l">请设定密码：</div>
+                    <div class="logreg_r">
+
+                        <input type="password"  name="password" id="pwd" class="input" maxlength="16">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <input type="hidden" name="redirect" value="/"/>
+                <div class="logregline">
+                    <div class="logreg_l">请再次输入设定密码：</div>
+                    <div class="logreg_r">
+
+                        <input type="password" name="rpwd" id="rpwd"  class="input" maxlength="16">
+                        <p><span id="password_notice">密码请设为6-16位字母或数字</span></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div >
+                    <div class="logreg_l">验证码：</div>
+                    <img style="cursor:pointer; " src="{:U('Home/User/vcode')}" onClick="this.src=this.src+'?'+Math.random();" title="看不清楚?点击刷新验证码?">
+                    <input type="text" name="vcode" >
+                </div>
+                <div class="logreg_dl">
+                    <input name="Submit" type="submit" value="注册" class="buttonred">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+
+</div>
+</div>
+<!-- include footer-->
+<include file="Public/footer" />
+<!--end  include footer-->
+</body>
+</html>
